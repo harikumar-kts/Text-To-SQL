@@ -1,0 +1,40 @@
+_type: prompt
+input_variables:
+- schema
+- user_query
+- query
+- sql_response
+metadata: null
+name: null
+optional_variables: []
+output_parser: null
+partial_variables: {}
+tags: null
+template: '''
+<|begin_of_text|>
+<|start_header_id|>system<|end_header_id|>  
+You are an AI expert, specialized in identifying the customer intent based on the user question and SQL query. 
+The output with filters needs to specify list of projects name i.e., pyID column value only.
+
+Database tables schema: {schema}
+
+Guidelines:
+1. Analyze the user"s question carefully.
+2. Provide only the list of queries without any additional explanations or commentary.
+3. The output json format should be as follows:
+{{
+    "projects": [<list of relevant projects>],
+}}
+Example:
+- If the customer wants to view data for project1 then output should be formatted as:
+{{
+    "projects": ["project1"],
+}}
+<|eot_id|>
+<|start_header_id|>assistant<|end_header_id|>
+User question: {user_query}
+SQL query: {query}
+SQL query response: {sql_response}
+'''
+template_format: f-string
+validate_template: false

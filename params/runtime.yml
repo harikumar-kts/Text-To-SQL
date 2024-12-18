@@ -1,0 +1,24 @@
+Database:
+    host: localhost
+    name: TPMS
+    username: ""
+    password: ""
+    odbc_driver: ODBC+Driver+18+for+SQL+Server
+    trusted_server_certificate: yes
+    encrypt: no
+
+ElasticSearch:
+    user_id: "elastic"
+    password: "IjmfvKZxmDUfe6nksmfutJwy"
+    hosts: [ "https://628c5bfd5b844abf882a8a6e24a04191.eastus2.azure.elastic-cloud.com:443" ]
+    certificate_path: NA
+
+LLM:
+    top_p: 0
+    temperature: 0
+    api_key: "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"
+    base_url: NA
+    model_name: "llama-3.1-70b-versatile" #"llama-3.1-8b-instant"
+
+Embedding:
+    model_name: "nomic-ai/nomic-embed-text-v1"
